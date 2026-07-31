@@ -8,7 +8,7 @@ import { DB_PATH } from "../config.mjs";
 
 const db = new Database(DB_PATH);
 db.pragma("journal_mode = WAL");
-
+initSchema();
 export function initSchema() {
   db.exec(`
     CREATE TABLE IF NOT EXISTS events (
